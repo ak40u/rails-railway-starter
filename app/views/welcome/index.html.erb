@@ -1,0 +1,13 @@
+<main>
+  <h1>Rails on Railway</h1>
+  <p>Rails <%= Rails::VERSION::STRING %> on Ruby <%= RUBY_VERSION %>.</p>
+  <p>Database: <strong><%= @database %></strong></p>
+  <p class="hint">Edit <code>app/views/welcome/index.html.erb</code>, or replace the root route in <code>config/routes.rb</code>.</p>
+</main>
+
+<style>
+  :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.6; }
+  body { margin: 0; display: grid; place-items: center; min-height: 100vh; }
+  main { max-width: 34rem; padding: 2rem; text-align: center; }
+  .hint { opacity: .7; font-size: .9rem; }
+</style>
