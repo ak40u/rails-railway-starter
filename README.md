@@ -32,9 +32,12 @@ jemalloc, bootsnap precompiled, assets built at image time.
 `/up` is Rails' built-in health endpoint — it returns 200 only if the app boots
 without raising, so a red check means the application genuinely cannot start.
 
-Migrations run through Rails' own `bin/docker-entrypoint`, which calls
-`db:prepare` before the server starts: it creates the database on first deploy and
-migrates on subsequent ones.
+Migrations run as Railway's pre-deploy step (`predeploy.sh`, wired in
+`railway.json`), so a new version takes traffic only after `db:prepare` has
+succeeded: it creates the schema on first deploy and migrates on subsequent ones.
+The script waits out a database that is still starting, but stops on the first
+failure of the migration itself, which fails the deploy and leaves the previous
+version serving.
 
 ## Run locally
 
