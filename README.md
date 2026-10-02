@@ -1,6 +1,6 @@
 # Rails starter for Railway
 
-Rails 8.1 on Ruby 3.4, in the production container Rails generates for itself.
+Rails 8.1 on Ruby 4.0, in the production container Rails generates for itself.
 
 ## Why this exists
 
